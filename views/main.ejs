@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Your Blog Title</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- Custom Styles -->
+    <style>
+        .icon-button {
+            background: none;
+            border: none;
+            padding: 0;
+            margin: 0;
+            cursor: pointer;
+            outline: none;
+            /* Remove the outline when the button is focused */
+        }
+
+        body {
+            padding-top: 56px;
+            background-color: rgb(243, 243, 243);
+            color: black;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        @media (min-width: 768px) {
+            body {
+                padding-top: 80px;
+            }
+        }
+
+        .blog-post {
+            margin-bottom: 40px;
+        }
+        .ga-footer{
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="height: 9%;">
+        <div class="container">
+            <a class="navbar-brand" href="#">Blogs Daily</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/blogs">Admin</a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <button class="icon-button" id="dark" style="display: block;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="40" fill="currentColor"
+                                class="bi bi-moon-stars" viewBox="0 0 16 16" style="color: white;">
+                                <path
+                                    d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278M4.858 1.311A7.269 7.269 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.316 7.316 0 0 0 5.205-2.162c-.337.042-.68.063-1.029.063-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286z" />
+                                <path
+                                    d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+                            </svg>
+                        </button>
+                        <button class="icon-button" id="light" style="display: none;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="40" fill="currentColor" class="bi bi-sun" viewBox="0 0 16 16" style="color: white;">
+                                <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+                              </svg>
+                        </button>
+                    </li>
+                    <li>
+                        <p style="margin-top: 10px; color: white;" id="themeText">Dark Theme</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Page Content -->
+    <div class="container">
+        <!-- Blog Posts -->
+        <div class="row" style="display: flex; background-color: rgb(156, 206, 121);">
+            <img src="/public/images/1.png" style="width: 60%; height: 58%;">
+            <div class="col-md-4" style="color: black;">
+                <!-- Sidebar Widget -->
+                <div class="card my-4">
+                    <h5 class="card-header">About the Author</h5>
+                    <img src="/public/images/1.png" style="width: 100%;">
+                    <div class="card-body" style="font-weight: bold; font-family:Arial, Helvetica, sans-serif; text-align:left;">
+                        Kamran Rasheed is a software developer,author and an actor.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="mt-2" style="background-color: bisque; height: auto; padding-left: 50px; padding-top: 50px; padding-right: 50px; text-align: justify; padding-bottom: 30px; color: black;">
+            <h1>Your own blog post guide</h1>
+            <p>
+                <h2>Name your blog</h2>
+                This is your opportunity to get creative and make a name that gives readers an idea of what to expect from your blog. Some tips on how to choose your blog name include:
+                
+                Keep your blog name easy to say and spell.
+                No need to get complicated at all with your name, though it might be tempting, since there are so many blogs out there. While choosing a unique name is essential, it’s also important to choose one that is easy to memorize for readers. It should also be simple to remember as an URL (which will come into play in the next step).
+                
+                Link your blog name to your brand message.
+                The more related your blog’s name is to the topics you cover, the better. For instance, DIY MFA is all about writers doing their own Master of Fine Arts in writing at home. The brand’s message is all about delving deep into one’s writing practice without needing a formal degree. Try to do something similar for your own blog name: Alluding to your blog’s message, value proposition, and covered topics in one sweep.
+            <h2>For Blog Description</h2>
+            your description should be precise and engaging for the audience
+            Welcome to [Your Blog Name] – your go-to destination for [briefly describe your blog's niche or main topics]. Dive into a world of [adjective] insights and [adjective] perspectives as we explore [specific themes or subjects]. Whether you're seeking [benefits readers can gain] or simply craving a dose of [your blog's tone or personality], our content is crafted just for you. Join our community and embark on a journey of [adjective] discoveries. Subscribe now for a regular dose of [your blog's unique selling points] and let's explore the extraordinary together            
+            </p>
+        </div>
+        <h1 class="mt-3">Recent Posts</h1>
+        <div style="background-color: rgb(121, 206, 190); text-align: center; border-radius: 20px; padding: 10px; color: black;">
+            <% blogs.forEach(blog=>{%>
+                <div class="card text-center mb-4 col-md-9" style="margin-left: 135px;" >
+                    <!-- <div class="card-header">
+                      Featured
+                    </div> -->
+                    <div class="card-body" >
+                      <h5 class="card-title"> <%= blog.title.toUpperCase()%></h5>
+                      <p class="card-text"> <%= blog.description%></p>
+                      <a href="/blogs/<%=blog.id%>" class="btn btn-primary">See More</a>
+                    </div>
+                    <div class="card-footer text-muted">
+                      Date Created: <%=blog.createdat %>
+                    </div>
+                  </div>
+                <%})%>
+
+        </div>
+        
+                <ul class="pagination justify-content-center mt-2">
+                    <li class="page-item disabled">
+                        <span class="page-link">Previous</span>
+                    </li>
+                    <li class="page-item active">
+                        <span class="page-link">1</span>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">2</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul>
+
+    </div>
+
+    <div style="background-color: rgb(89, 89, 162); color: white; height: 400px; padding-top: 5%;">
+        <ul style="margin-left: 10%; ">
+            <h3>Help</h3>
+            <br>
+            <br>
+            <a href="/go/helpcenter" target="_blank" class="ga-footer" data-track="Help Center">Facebook</a>
+            <br>
+            <a href="/go/helpforum" target="_blank" class="ga-footer" data-track="Help Forum">Instagram</a>
+            <br>
+            <a href="/go/tutorials" target="_blank" class="ga-footer" data-track="Video Tutorials">youtube</a>
+            <br>
+            <a href="/go/tutorials" target="_blank" class="ga-footer" data-track="Video Tutorials">Tiktok</a>
+          </ul>
+        
+        </div>
+
+    </div>
+    <script>
+        const dark = document.getElementById("dark")
+        const light = document.getElementById("light")
+        const themeText = document.getElementById("themeText")
+        dark.addEventListener("click",()=>{
+            document.body.style.backgroundColor =  'rgb(14, 14, 34)';
+            document.body.style.color = 'white';
+            themeText.innerHTML = "Light Theme"
+            light.style.display = "block"
+            dark.style.display = "none"
+        })
+       
+        light.addEventListener("click",()=>{
+            document.body.style.backgroundColor =  'white';
+            document.body.style.color = 'black';
+            themeText.innerHTML= "Dark Theme"
+            dark.style.display = "block"
+            light.style.display = "none"
+        })
+    </script>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
